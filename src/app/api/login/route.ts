@@ -2,7 +2,10 @@ import { NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.SECRET_ID;
-const redirect_uri = 'http://localhost:3000/callback';
+const redirect_uri =
+  process.env.NODE_ENV === 'production'
+    ? process.env.HOSTED_URL
+    : process.env.LOCAL_URL;
 
 export const POST = async (request: Request) => {
   try {

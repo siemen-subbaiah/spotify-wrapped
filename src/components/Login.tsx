@@ -1,13 +1,17 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Login = () => {
   const router = useRouter();
 
   const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID;
-  const REDIRECT_URI = 'http://localhost:3000/callback';
+  const REDIRECT_URI =
+    process.env.NODE_ENV === 'production'
+      ? process.env.NEXT_PUBLIC_HOSTED_URL
+      : process.env.NEXT_PUBLIC_LOCAL_URL;
+
   const scope = 'user-read-private user-read-email user-top-read';
 
   const handleLogin = () => {
