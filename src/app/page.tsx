@@ -1,8 +1,11 @@
+import MyPlayer from '@/components/MyPlayer';
 import {
   getUserProfile,
   getUsersTopArtists,
   getUsersTopTracks,
 } from '@/lib/fetch';
+import MyComposition from '@/remotion/MyComposition';
+import { Player } from '@remotion/player';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 import React from 'react';
@@ -42,7 +45,7 @@ const HomePage = async () => {
                 >
                   Spotify profile
                 </a>
-                <p>User Type : {userProfile.type}</p>
+                <p>Plan : {userProfile.product}</p>
               </div>
             </section>
           </div>
@@ -80,6 +83,12 @@ const HomePage = async () => {
               })}
             </section>
           </div>
+          <MyPlayer
+            title=''
+            userProfile={userProfile}
+            tracks={tracks}
+            artists={artists}
+          />
         </>
       )}
     </main>

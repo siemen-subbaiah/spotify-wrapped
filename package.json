@@ -9,10 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@remotion/cli": "^4.0.60",
+    "@remotion/eslint-plugin": "^4.0.60",
+    "@remotion/google-fonts": "^4.0.60",
+    "@remotion/player": "^4.0.60",
+    "@remotion/transitions": "^4.0.60",
     "geist": "^1.0.0",
     "next": "14.0.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "remotion": "^4.0.60"
   },
   "devDependencies": {
     "@types/node": "^20",
